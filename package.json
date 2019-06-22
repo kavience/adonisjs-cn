@@ -1,0 +1,27 @@
+{
+  "name": "adonisjs-cn",
+  "version": "1.0.0",
+  "description": "adonisjs for chinease",
+  "main": "index.js",
+  "scripts": {
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs",
+    "deploy": "bash deploy.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/kavience/adonisjs-cn.git"
+  },
+  "keywords": [
+    "adonisjs"
+  ],
+  "author": "kavience",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kavience/adonisjs-cn/issues"
+  },
+  "homepage": "https://github.com/kavience/adonisjs-cn#readme",
+  "devDependencies": {
+    "vuepress": "^1.0.1"
+  }
+}
