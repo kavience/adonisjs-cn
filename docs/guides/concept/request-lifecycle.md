@@ -15,9 +15,9 @@ JavaScript 是异步的。对于初学者来说，很难理解它是如何工作
 
 你必须终止路由处理程序中的 Request ，一旦终止， AdonisJs 将执行所有下游中间件并将响应发送回客户端。
 
-## HTTP 上下文
+## HTTP Context
 
-AdonisJs 为每个路由处理程序提供一个 HTTP 上下文对象。
+AdonisJs 为每个路由处理程序提供一个 HTTP Context 对象。
 
 该对象包含处理 Request 所需的所有内容，比如 Request 或响应类，可以通过 provider 或 middleware 轻松扩展:
 ```JavaScript
