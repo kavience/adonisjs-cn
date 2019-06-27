@@ -99,11 +99,11 @@ const redis = ioc.use('My/Redis')
 ```
 1. 该 ioc.bind 方法有两个参数：
 
-    - 绑定的名称（例如 My/Redis ）
+    - 绑定的名称(例如 My/Redis )
 
     - 每次访问绑定时都会执行一个工厂函数，返回绑定的最终值
 
-2. 由于我们使用的是 IoC 容器，因此我们会提取任何现有的绑定（例如 Config ）并将其传递给 Redis 类。
+2. 由于我们使用的是 IoC 容器，因此我们会提取任何现有的绑定(例如 Config )并将其传递给 Redis 类。
 
 3. 最后，我们返回一个新的实例Redis，已配置并可供使用。
 
@@ -147,9 +147,9 @@ const redis = use('My/Redis')
 
 以 **Adonis/Src/Config** 为例：
 
-- Adonis 是项目名称（也可能是你公司的名称）
+- Adonis 是项目名称(也可能是你公司的名称)
 
-- Src 是 Scope ，因为这个绑定是核心的一部分（对于自己的包，我们使用 **Addon** 关键字）
+- Src 是 Scope ，因为这个绑定是核心的一部分(对于自己的包，我们使用 **Addon** 关键字)
 
 - Config 是实际的模块名称
 

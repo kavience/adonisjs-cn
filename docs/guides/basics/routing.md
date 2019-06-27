@@ -30,7 +30,7 @@ Route.route('/', () => {
   //
 }, ['GET', 'POST', 'PUT'])
 ```
-要直接渲染视图（例如静态页面），请使用 **Route.on.render** ：
+要直接渲染视图(例如静态页面)，请使用 **Route.on.render** ：
 ```javascript
 Route.on('/').render('welcome')
 ```
@@ -72,7 +72,7 @@ Route.get('api/v1/users', closure)
 Route.any('*', ({ view }) => view.render('...'))
 ```
 ## 命名路由
-虽然路由是在 **start/routes.js** 文件中定义的，但它们在应用程序中的其他位置都被引用（例如，使用 **views** 路由助手为给定路由创建 URL 。
+虽然路由是在 **start/routes.js** 文件中定义的，但它们在应用程序中的其他位置都被引用(例如，使用 **views** 路由助手为给定路由创建 URL 。
 
 通过使用该 **as** 方法，你可以为路由指定唯一名称：
 ```javascript

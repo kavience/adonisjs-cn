@@ -39,7 +39,7 @@ const globalMiddleware = [
 以下方法列表可用于读取 request 正文。
 
 #### all
-返回包含所有请求数据的对象（合并 get 请求参数和 post 请求参数）：
+返回包含所有请求数据的对象(合并 get 请求参数和 post 请求参数)：
 ```javascript
 const all = request.all()
 ```
@@ -65,12 +65,12 @@ const raw = request.raw()
 const data = request.only(['username', 'email', 'age'])
 ```
 #### except
-返回除指定键以外的所有对象（与 only 相反）：
+返回除指定键以外的所有对象(与 only 相反)：
 ```javascript
 const data = request.except(['csrf_token', 'submit'])
 ```
 #### input
-获取给定键的值（如果它不存在，则返回 default 值）：
+获取给定键的值(如果它不存在，则返回 default 值)：
 ```javascript
 const drink = request.input('drink')
 
@@ -115,7 +115,7 @@ await User.createMany(users)
 你可以使用以下方法之一从请求中读取 Headers。
 
 ### header
-给定键的 header 值（可选择使用默认值）：
+给定键的 header 值(可选择使用默认值)：
 ```javascript
 var auth = request.header('authorization')
 
@@ -134,7 +134,7 @@ const headers = request.headers()
 你可以使用以下方法之一从请求中读取 Cookie 。
 
 ### cookie
-给定键的 cookie 值（可选择使用默认值）：
+给定键的 cookie 值(可选择使用默认值)：
 ```javascript
 const cartTotal = request.cookie('cart_total')
 
@@ -149,7 +149,7 @@ const cookies = request.cookies()
 以下方法用于读取客户端设置的 cookie 。
 
 ### plainCookie
-给定键的原始 cookie 值（可选择使用默认值）：
+给定键的原始 cookie 值(可选择使用默认值)：
 ```javascript
 
 const jsCookie = request.plainCookie('cart_total')
@@ -219,7 +219,7 @@ const ip = request.ip()
 const ips = request.ips()
 ```
 ### subdomains
-返回请求子域列表（www从列表中删除）：
+返回请求子域列表(www从列表中删除)：
 ```javascript
 const subdomains = request.subdomains()
 ```
@@ -257,7 +257,7 @@ const protocol = request.protocol()
 request.match(['posts/:id']) // returns true
 ```
 ### hasBody
-判断请求是否具有body（主要由 BodyParser 用于确定是否解析 body ）：
+判断请求是否具有body(主要由 BodyParser 用于确定是否解析 body )：
 ```javascript
 if (request.hasBody()) {
   // do something
@@ -288,8 +288,8 @@ Route.put('users', 'UserController.update')
 
 2. **allowMethodSpoofing** 在 config/app.js 文件中启用。
 
-## 扩展请求
-你可以通过添加自己的方法（称为宏）来扩展 request 原型。
+## 扩展 Request
+你可以通过添加自己的方法(称为宏)来扩展 request 原型。
 
 > 由于要扩展的代码 Request 只需执行一次，因此你可以使用 provider 或 Ignitor hooks 来执行此操作。阅读 [扩展核心](https://adonisjs.com/docs/4.1/extending-adonisjs) 以获取更多信息。
 ```javascript

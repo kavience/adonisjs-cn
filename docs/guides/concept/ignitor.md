@@ -53,13 +53,13 @@ new Ignitor(require('@adonisjs/fold'))
 ## Ignitor 方法
 以下是 ignitor 实例上可用的方法列表。
 
-### approot（路径）
+### approot(路径)
 定义应用程序根目录的绝对路径：
 ```JavaScript
 ignitor
   .appRoot(__dirname)
 ```
-### modulesRoot（路径）
+### modulesRoot(路径)
 定义应用程序 node_modules 父目录的绝对路径。
 
 默认情况下，使用设置的路径 appRoot()：
@@ -67,7 +67,7 @@ ignitor
 ignitor
   .modulesRoot(path.join(__dirname, '..'))
 ```
-### appFile（路径）
+### appFile(路径)
 定义应用程序文件的相对路径。
 
 默认情况下，使用该 start/app.js 文件：
@@ -75,7 +75,7 @@ ignitor
 ignitor
   .appFile('start/app.js')
 ```
-### loadCommands（）
+### loadCommands()
 指示 Ignitor 加载 ace 提供程序和命令。
 
 这是在运行 ace 命令时完成的，但是，你也可以在启动 HTTP 服务器时加载命令：

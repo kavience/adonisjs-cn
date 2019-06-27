@@ -36,9 +36,9 @@ module.exports = UserController
 ```javascript
 Route.get(url, 'UserController.index')
 ```
-点之前的部分是对控制器文件的引用（例如 UserController ），默认情况下命名为 **App/Controllers/Http** 。
+点之前的部分是对控制器文件的引用(例如 UserController )，默认情况下命名为 **App/Controllers/Http** 。
 
-点后面的部分是你要在此控制器内调用的方法的名称（例如 index ）。
+点后面的部分是你要在此控制器内调用的方法的名称(例如 index )。
 
 例如：
 ```javascript
