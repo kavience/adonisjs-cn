@@ -69,7 +69,7 @@ hasOne(relatedModel, primaryKey, foreignKey)
 
 #### 数据库表
 
-![hasOne](./img/has-one.png)
+![数据库表](./img/has-one.png)
 
 #### 定义关联
 ```javascript
@@ -103,7 +103,7 @@ hasMany(relatedModel, primaryKey, foreignKey)
 默认为 tableName_primaryKey 当前模型。使用表名的单数形式(例如，外键 user_id 引用 id 表上的列 users )。
 
 #### 数据库表
-![hasOne](./img/has-many.png)
+![数据库表](./img/has-many.png)
 
 #### 定义关联
 ```javascript
@@ -138,7 +138,7 @@ belongsTo(relatedModel, primaryKey, foreignKey)
 默认为相关的模型主键。
 
 #### 数据库表
-![hasOne](./img/belong-to.png)
+![数据库表](./img/belong-to.png)
 
 
 #### 定义关联
@@ -197,7 +197,7 @@ belongsToMany(
 默认为相关的模型主键(即id)。
 
 #### 数据库表
-![hasOne](./img/belong-to-many.png)
+![数据库表](./img/belong-to-many.png)
 
 #### 定义关联
 ```javascript
@@ -307,7 +307,7 @@ manyThrough(
 默认为当前模型的外键(在该例子中，这将是 country_id )。
 
 #### 数据库表
-![hasOne](./img/has-many-through.png)
+![数据库表](./img/has-many-through.png)
 
 #### 定义关联
 关联需要在主要和中间模型上定义。
