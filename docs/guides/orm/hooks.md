@@ -1,17 +1,15 @@
-# 钩子函数
-定义钩子
-中止数据库操作
-生命周期事件
-挂钩是在数据库生命周期事件之前或之后执行的操作。
+#  Hooks 函数
+ Hooks 是在数据库[生命周期](https://adonisjs.com/docs/4.1/database-hooks#_lifecycle_events)事件之前或之后执行的操作。
 
-使用模型挂钩有助于保持代码库DRY，从定义挂钩的任何位置提供方便的生命周期代码注入。
+使用模型 Hooks 有助于保持代码库 [DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself) ，从定义 Hooks 的任何位置提供方便的生命周期代码注入。
 
-经典的钩子示例是在将用户保存到数据库之前散列用户密码。
+经典的 Hooks 示例是在将用户保存到数据库之前散列用户密码。
 
-定义钩子
-钩子可以通过闭包在模型类文件中定义，也可以通过引用目录中的任何file.method处理程序来定义app/Models/Hooks。
+## 定义 Hooks 
+ Hooks 可以通过闭包在模型类文件中定义，也可以通过引用目录中的任何 file.method 处理程序来定义 app/Models/Hooks 。
 
-绑定关闭
+#### 绑定闭包
+```javascript
 const Model = use('Model')
 const Hash = use('Hash')
 
@@ -26,19 +24,22 @@ class User extends Model {
 }
 
 module.exports = User
-In the example above, the beforeCreate closure is executed when creating a User model to ensure the user’s password is hashed before it’s saved.
+```
+在上面的示例中，beforeCreate 在创建 User 模型时执行闭包，以确保在保存用户密码之前对其进行哈希处理。
 
-Hook File
-AdonisJs has a dedicated app/Models/Hooks directory to store model hooks.
+#### Hooks 文件
+AdonisJs 有一个专门的 app/Models/Hooks 目录来存储模型 Hooks 。
 
-Use the make:hook command to create a hook file:
-
-> adonis make:hook User
-Output
-✔ create  app/Models/Hooks/UserHook.js
-Open the new UserHook.js file and paste in the code below:
-
-app/Models/Hooks/UserHook.js
+使用该 make:hook 命令创建 Hooks 文件：
+```bash
+adonis make:hook User
+```
+```bash
+# 输出
+create  app/Models/Hooks/UserHook.js
+```
+打开新 UserHook.js 文件并粘贴下面的代码：
+```javascript
 'use strict'
 
 const Hash = use('Hash')
@@ -48,8 +49,9 @@ const UserHook = exports = module.exports = {}
 UserHook.hashPassword = async (user) => {
   user.password = await Hash.make(user.password)
 }
-With a hook file.method defined, we can remove the inline closure from our previous example and instead reference the hook file and method like so:
-
+```
+在 file.method 定义了一个 Hooks 的情况下，我们可以从前面的例子中删除内联闭包，而是引用 Hooks 文件和方法，如下所示：
+```javascript
 const Model = use('Model')
 
 class User extends Model {
@@ -60,60 +62,30 @@ class User extends Model {
 }
 
 module.exports = User
-Aborting Database Operations
-Hooks can abort database operations by throwing exceptions:
-
-app/Models/Hooks/UserHook.js
+```
+## 中止数据库操作
+ Hooks 可以通过抛出异常来中止数据库操作：
+```javascript
 UserHook.validate = async (user) => {
   if (!user.username) {
     throw new Error('Username is required')
   }
 }
-Lifecycle Events
-Below is the list of available database lifecycle events to hook into:
+```
+## 生命周期事件
+下面是要 Hooks 的可用数据库生命周期事件列表：
 
-Event	Description
-beforeCreate
-
-Before creating a new record.
-
-afterCreate
-
-After a new record is created.
-
-beforeUpdate
-
-在更新记录之前。
-
-afterUpdate
-
-记录更新后。
-
-beforeSave
-
-在创建或更新新记录之前。
-
-afterSave
-
-创建或更新新记录后。
-
-beforeDelete
-
-在删除记录之前。
-
-afterDelete
-
-删除记录后。
-
-afterFind
-
-从数据库中提取单个记录后。
-
-afterFetch
-
-fetch执行该方法后。hook方法接收一组模型实例。
-
-afterPaginate
-
-paginate执行该方法后。hook方法接收两个参数：模型实例数组和分页元数据。
+事件|描述
+-|-
+beforeCreate|在创建新记录之前。
+afterCreate|创建新记录后。
+beforeUpdate|在更新记录之前。
+afterUpdate|记录更新后。
+beforeSave|在创建或更新新记录之前。
+afterSave|创建或更新新记录后。
+beforeDelete|在删除记录之前。
+afterDelete|删除记录后。
+afterFind|从数据库中提取单个记录后。
+afterFetch|执行 fetch 方法后。 hook 方法接收一组模型实例。
+afterPaginate| paginate 执行该方法后。 hook 方法接收两个参数：模型实例数组和分页元数据。
 

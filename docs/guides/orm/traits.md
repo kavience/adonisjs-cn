@@ -1,31 +1,28 @@
-# 特点
-创造特质
-注册特征
-使用选项注册特征
-扩展模型方法
-添加模型挂钩
-扩展查询生成器
-特征使得可以从外部向模型添加功能。
+# Traits
+ traits 使得可以从外部向模型添加功能。
 
-使用模型特征，你可以：
+使用模型 traits ，你可以：
 
-向模型类添加新方法。
+- 向模型类添加新方法。
 
-听模型钩子。
+- 监听模型钩子。
 
-将方法添加到给定模型的Query Builder实例。
+- 将方法添加到给定模型的 Query Builder 实例。
 
-创造特质
-特征存储在app/Models/Traits目录中。
+## 创造特质
+ traits 存储在 app/Models/Traits 目录中。
 
-使用该make:trait命令生成特征文件：
-
-> adonis make:trait Slugify
+使用该 make:trait 命令生成 traits 文件：
+```bash
+adonis make:trait Slugify
+```
 产量
-✔ create  app/Models/Traits/Slugify.js
-Traits需要一个register接收Model类的方法和一个customOptions对象作为其参数：
-
-应用/型号/性状/ Slugify.js
+```bash
+# 输出
+create  app/Models/Traits/Slugify.js
+```
+ Traits 需要一个 register 接收 Model 类的方法和一个 customOptions 对象作为其参数：
+```javascript
 'use strict'
 
 class Slugify {
@@ -36,9 +33,10 @@ class Slugify {
 }
 
 module.exports = Slugify
-注册特征
-像Lucid模型一样添加一个特征：
-
+```
+## 注册 traits 
+给 Lucid 模型一样添加一个 traits ：
+```javascript
 const Model = use('Model')
 
 class User extends Model {
@@ -47,9 +45,10 @@ class User extends Model {
     this.addTrait('Slugify')
   }
 }
-使用选项注册特征
-如果需要，你可以在添加特征时传递初始化选项：
-
+```
+## 使用选项注册 traits 
+如果需要，你可以在添加 traits 时传递初始化选项：
+```javascript
 const Model = use('Model')
 
 class User extends Model {
@@ -58,11 +57,11 @@ class User extends Model {
     this.addTrait('Slugify', {useCamelCase: true})
   }
 }
-你传递的选项将转发到特征的register()方法。
+```
+你传递的选项将转发到 traits 的 register() 方法。
 
-传递选项时，建议你定义默认的特征选项，如下所示：
-
-应用/型号/性状/ Slugify.js
+传递选项时，建议你定义默认的 traits 选项，如下所示：
+```javascript
 const _ = require('lodash')
 
 class Slugify {
@@ -74,10 +73,10 @@ class Slugify {
 }
 
 module.exports = Slugify
-扩展模型方法
-使用traits添加静态和实例模型方法：
-
-应用/型号/性状/ Slugify.js
+```
+## 扩展模型方法
+使用 traits 添加静态和实例模型方法：
+```javascript
 class Slugify {
 
   register (Model, options) {
@@ -96,9 +95,10 @@ class Slugify {
 }
 
 module.exports = Slugify
-添加模型挂钩
-使用traits 挂钩到数据库生命周期事件：
-
+```
+## 添加模型 Hooks
+使用 traits 挂钩到数据库生命周期事件：
+```javascript
 class Slugify {
 
   register (Model, options) {
@@ -109,9 +109,10 @@ class Slugify {
 }
 
 module.exports = Slugify
-扩展查询生成器
-使用traits将宏添加到模型的Query Builder中：
-
+```
+## 扩展查询生成器
+使用 traits 将宏添加到模型的 Query Builder 中：
+```javascript
 class Slugify {
 
   register (Model, options) {
@@ -123,5 +124,8 @@ class Slugify {
 }
 
 module.exports = Slugify
+```
 用法
+```javascript
 await User.query().whereSlug('some value')
+```

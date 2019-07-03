@@ -103,7 +103,8 @@ module.exports = {
                       '/guides/orm/hooks', 
                       '/guides/orm/traits', 
                       '/guides/orm/mutator', 
-                      '/guides/orm/relationships', 
+                      '/guides/orm/relationships-one', 
+                      '/guides/orm/relationships-two', 
                       '/guides/orm/serialization', 
                   ]
               },
