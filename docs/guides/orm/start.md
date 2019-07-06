@@ -1,7 +1,7 @@
 # 快速开始
-Lucid 是 AdonisJS 实现的活跃记录模式。
+Lucid 是 AdonisJS 的 [active record pattern](https://en.wikipedia.org/wiki/Active_record_pattern) 的实现
 
-如果你熟悉 Laravel 或 Ruby on Rails 的，你会发现 Lucid 和 Laravel 的 Eloquent 或 Rails 的 Active Record 。
+如果你熟悉 Laravel 或 Ruby on Rails 的，你会发现 Lucid 和 Laravel 的 Eloquent 或 Rails 的 Active Record 非常相似。
 
 ## 介绍
 活动记录模型通常优于普通数据库查询，因为它们易于使用，而且功能强大的 API 可以驱动应用程序数据流。

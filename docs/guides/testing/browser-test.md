@@ -11,10 +11,10 @@ AdonisJs 使用 Chrome 浏览器编写功能测试变得更加简单和容易。
 > Puppeteer 附带一个捆绑的 Chromium 并需要一段时间来安装它。你可以通过传递 PUPPETEER_SKIP_CHROMIUM_DOWNLOAD 环境变量来跳过 chrome 安装。
 ```bash
 adonis install @adonisjs/vow-browser
-```
 # Skip Chromium download
 PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true adonis install @adonisjs/vow-browser
-接下来，我们需要在aceProviders数组下注册提供程序。
+```
+接下来，我们需要在 aceProviders 数组下注册提供程序。
 
 ```javascript
 const aceProviders = [

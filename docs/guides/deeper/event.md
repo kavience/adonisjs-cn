@@ -121,19 +121,18 @@ Event
 Event.emit('new::user', user)
 ```
 #### fire(event, data)
-fire 方法使 emit 方法别名。
-
+fire 方法是 emit 方法的别名。
 #### removeListener(event, listener)
 删除给定事件的侦听器：
-
+```javascript
 Event.on('new::user', 'User.registered')
 
 // later remove it
 Event.removeListener('new::user', 'User.registered')
+```
 > 你必须绑定IoC容器引用以便稍后将其删除。
 #### off(event, listener)
-off 方法为 removeListener 方法添加别名。
-
+off 方法为 removeListener 方法的别名。
 #### removeAllListeners(event)
 删除给定事件的所有侦听器：
 ```javascript

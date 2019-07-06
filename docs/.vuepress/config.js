@@ -147,7 +147,6 @@ module.exports = {
                         '/recipes/recipes/assets', 
                         '/recipes/recipes/install', 
                         '/recipes/recipes/https', 
-                        '/recipes/recipes/guessing', 
                     ]
                 },
             ]

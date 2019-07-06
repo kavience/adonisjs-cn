@@ -215,7 +215,6 @@ npm i --save-dev japa-cli
 
 ## 常见问题解答
 
-常见问题解答
 1. 为什么不安装 **@adonisjs/fold** 为依赖？
 
 这一要求使得 @adonisjs/fold 的主要应用程序版本总是安装在你的提供者使用。这样的话每个提供者最终都将提供自己版本的 AdonisJS IoC 容器。如果你曾经使用过 gulp ，他们还[建议(p:14)](https://github.com/gulpjs/gulp/blob/master/docs/writing-a-plugin/guidelines.md)在创建插件时不要将 gulp 作为依赖项安装。
