@@ -17,6 +17,7 @@ module.exports = {
                   title: '序言', 
                   collapsable: false, 
                   children: [
+                      '/guides/preface/why', 
                       '/guides/preface/about', 
                       '/guides/preface/upgrade', 
                       '/guides/preface/contribution', 
